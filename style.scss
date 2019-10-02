@@ -1,0 +1,804 @@
+@charset 'utf-8';
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin circle-bfr-set {
+  position: absolute;
+  top: 0;
+  transform-origin: right center;
+  content: '';
+}
+
+@mixin circle-aft-set {
+  position: absolute;
+  top: 0;
+  transform-origin: left center;
+  z-index: 3;
+  content: '';
+}
+
+//  circle1 background color
+$c1-bfr: #222;
+$c1-aft: #5b5266;
+
+//  circle2 background color
+$c2-bfr: #222;
+$c2-aft: #92889e;
+
+//  circle3 background color
+$c3-bfr: #222;
+$c3-aft: #3c3347;
+
+// circle4 background color
+$c4-bfr: #222;
+$c4-aft: #5b5266;
+
+//  circle5 background color
+$c5-bfr: #222;
+$c5-aft: #92889e;
+
+//  circle6 background color
+$c6-bfr: #222;
+$c6-aft: #3c3347;
+
+//  circle7 background color
+$c7-bfr: #222;
+$c7-aft: #5b5266;
+
+//  circle8 background color
+$c8-bfr: #222;
+$c8-aft: #92889e;
+
+//  circle9 background color
+$c9-bfr: #222;
+$c9-aft: #3c3347;
+
+//  circle10 background color
+$c10-bfr: #222;
+$c10-aft: #5b5266;
+
+//  circle11 background color
+$c11-bfr: #222;
+$c11-aft: #92889e;
+
+//  circle12 background color
+$c12-bfr: #222;
+$c12-aft: #3c3347;
+
+//  circle13 background color
+$c13-bfr: #222;
+$c13-aft: #5b5266;
+
+.anim_1 {
+  @include position-center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+/*--------------------------
+  circle1
+--------------------------*/
+  .circle_1 {
+    @include position-center;
+    width: 200vw;
+    height: 200vw;
+    background: $c1-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -100vw;
+      width: 200vw;
+      height: 200vw;
+      background: $c1-bfr;
+      animation: circle-rotate-left .7s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      left: 100vw;
+      width: 200vw;
+      height: 200vw;
+      background: $c1-bfr;
+      animation: circle_1-rotate-right .7s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle2
+--------------------------*/
+  .circle_2 {
+    @include position-center;
+    width: 100vw;
+    height: 100vw;
+    background:  $c2-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -50vw;
+      width: 100vw;
+      height: 100vw;
+      background: $c2-bfr;
+      animation: circle-rotate-left .7s .2s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -50vw;
+      width: 100vw;
+      height: 100vw;
+      background: $c2-bfr;
+      animation: circle_2-rotate-right .7s .2s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle3
+--------------------------*/
+  .circle_3 {
+    @include position-center;
+    width: 96vw;
+    height: 96vw;
+    background:  $c3-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -48vw;
+      width: 96vw;
+      height: 96vw;
+      background:  $c3-bfr;
+      animation: circle-rotate-left .7s .4s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -48vw;
+      width: 96vw;
+      height: 96vw;
+      background:  $c3-bfr;
+      animation: circle_3-rotate-right .7s .4s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle4
+--------------------------*/
+  .circle_4 {
+    @include position-center;
+    width: 86vw;
+    height: 86vw;
+    background:  $c4-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -43vw;
+      width: 86vw;
+      height: 86vw;
+      background:  $c4-bfr;
+      animation: circle-rotate-left .7s .6s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -43vw;
+      width: 86vw;
+      height: 86vw;
+      background:  $c4-bfr;
+      animation: circle_4-rotate-right .7s .6s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle5
+--------------------------*/
+  .circle_5 {
+    @include position-center;
+    width: 68vw;
+    height: 68vw;
+    background:  $c5-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -34vw;
+      width: 68vw;
+      height: 68vw;
+      background:  $c5-bfr;
+      animation: circle-rotate-left .7s .8s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -34vw;
+      width: 68vw;
+      height: 68vw;
+      background:  $c5-bfr;
+      animation: circle_5-rotate-right .7s .8s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle6
+--------------------------*/
+  .circle_6 {
+    @include position-center;
+    width: 66vw;
+    height: 66vw;
+    background:  $c6-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -33vw;
+      width: 66vw;
+      height: 66vw;
+      background:  $c6-bfr;
+      animation: circle-rotate-left .7s 1s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -33vw;
+      width: 66vw;
+      height: 66vw;
+      background:  $c6-bfr;
+      animation: circle_6-rotate-right .7s 1s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 7
+--------------------------*/
+  .circle_7 {
+    @include position-center;
+    width: 62vw;
+    height: 62vw;
+    background:  $c7-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -31vw;
+      width: 62vw;
+      height: 62vw;
+      background:  $c7-bfr;
+      animation: circle-rotate-left .7s 1.2s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -31vw;
+      width: 62vw;
+      height: 62vw;
+      background:  $c7-bfr;
+      animation: circle_7-rotate-right .7s 1.2s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 8
+--------------------------*/
+  .circle_8 {
+    @include position-center;
+    width: 52vw;
+    height: 52vw;
+    background:  $c8-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -26vw;
+      width: 52vw;
+      height: 52vw;
+      background:  $c8-bfr;
+      animation: circle-rotate-left .7s 1.4s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -26vw;
+      width: 52vw;
+      height: 52vw;
+      background:  $c8-bfr;
+      animation: circle_8-rotate-right .7s 1.4s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 9
+--------------------------*/
+  .circle_9 {
+    @include position-center;
+    width: 36vw;
+    height: 36vw;
+    background:  $c9-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -18vw;
+      width: 36vw;
+      height: 36vw;
+      background:  $c9-bfr;
+      animation: circle-rotate-left .7s 1.6s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -18vw;
+      width: 36vw;
+      height: 36vw;
+      background:  $c9-bfr;
+      animation: circle_9-rotate-right .7s 1.6s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 10
+--------------------------*/
+  .circle_10 {
+    @include position-center;
+    width: 30vw;
+    height: 30vw;
+    background:  $c10-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -15vw;
+      width: 30vw;
+      height: 30vw;
+      background:  $c10-bfr;
+      animation: circle-rotate-left .7s 1.8s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -15vw;
+      width: 30vw;
+      height: 30vw;
+      background:  $c10-bfr;
+      animation: circle_10-rotate-right .7s 1.8s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 11
+--------------------------*/
+  .circle_11 {
+    @include position-center;
+    width: 18vw;
+    height: 18vw;
+    background:  $c11-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -9vw;
+      width: 18vw;
+      height: 18vw;
+      background:  $c11-bfr;
+      animation: circle-rotate-left .7s 2s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -9vw;
+      width: 18vw;
+      height: 18vw;
+      background:  $c11-bfr;
+      animation: circle_11-rotate-right .7s 2s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 12
+--------------------------*/
+  .circle_12 {
+    @include position-center;
+    width: 14vw;
+    height: 14vw;
+    background:  $c12-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -7vw;
+      width: 14vw;
+      height: 14vw;
+      background:  $c12-bfr;
+      animation: circle-rotate-left .7s 2.2s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -7vw;
+      width: 14vw;
+      height: 14vw;
+      background:  $c12-bfr;
+      animation: circle_12-rotate-right .7s 2.2s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+/*--------------------------
+  circle 13
+--------------------------*/
+  .circle_13 {
+    @include position-center;
+    width: 6vw;
+    height: 6vw;
+    background:  $c13-aft;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 4;
+  
+    &:before {
+      @include circle-bfr-set;
+      left: -3vw;
+      width: 6vw;
+      height: 6vw;
+      background:  $c13-bfr;
+      animation: circle-rotate-left .7s 2.4s linear forwards;
+    }
+  
+    &:after {
+      @include circle-aft-set;
+      right: -3vw;
+      width: 6vw;
+      height: 6vw;
+      background:  $c13-bfr;
+      animation: circle_13-rotate-right .7s 2.4s cubic-bezier(0.55, 0.55, 0.55, 0.99) forwards;
+    }
+  }
+}
+
+
+@keyframes circle-rotate-left { 0%   { transform: rotate(0deg);   }
+                                50%  { transform: rotate(0deg);   }
+                                100% { transform: rotate(180deg); }
+}
+
+@keyframes circle_1-rotate-right { 0%     { transform: rotate(0deg);   background: $c1-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c1-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c1-aft;}
+                                   100%   { transform: rotate(360deg); background: $c1-aft;}
+}
+
+
+@keyframes circle_2-rotate-right { 0%     { transform: rotate(0deg);   background: $c2-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c2-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c2-aft;}
+                                   100%   { transform: rotate(360deg); background: $c2-aft;}
+}
+
+@keyframes circle_3-rotate-right { 0%     { transform: rotate(0deg);   background: $c3-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c3-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c3-aft;}
+                                   100%   { transform: rotate(360deg); background: $c3-aft;}
+}
+
+@keyframes circle_4-rotate-right { 0%     { transform: rotate(0deg);   background: $c4-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c4-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c4-aft;}
+                                   100%   { transform: rotate(360deg); background: $c4-aft;}
+}
+
+@keyframes circle_5-rotate-right { 0%     { transform: rotate(0deg);   background: $c5-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c5-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c5-aft;}
+                                   100%   { transform: rotate(360deg); background: $c5-aft;}
+}
+
+@keyframes circle_6-rotate-right { 0%     { transform: rotate(0deg);   background: $c6-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c6-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c6-aft;}
+                                   100%   { transform: rotate(360deg); background: $c6-aft;}
+}
+
+@keyframes circle_7-rotate-right { 0%     { transform: rotate(0deg);   background: $c7-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c7-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c7-aft;}
+                                   100%   { transform: rotate(360deg); background: $c7-aft;}
+}
+
+@keyframes circle_8-rotate-right { 0%     { transform: rotate(0deg);   background: $c8-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c8-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c8-aft;}
+                                   100%   { transform: rotate(360deg); background: $c8-aft;}
+}
+
+@keyframes circle_9-rotate-right { 0%     { transform: rotate(0deg);   background: $c9-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c9-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c9-aft;}
+                                   100%   { transform: rotate(360deg); background: $c9-aft;}
+}
+
+@keyframes circle_10-rotate-right { 0%    { transform: rotate(0deg);   background: $c10-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c10-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c10-aft;}
+                                   100%   { transform: rotate(360deg); background: $c10-aft;}
+}
+
+@keyframes circle_11-rotate-right { 0%    { transform: rotate(0deg);   background: $c11-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c11-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c11-aft;}
+                                   100%   { transform: rotate(360deg); background: $c11-aft;}
+}
+
+@keyframes circle_12-rotate-right { 0%    { transform: rotate(0deg);   background: $c12-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c12-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c12-aft;}
+                                   100%   { transform: rotate(360deg); background: $c12-aft;}
+}
+
+@keyframes circle_13-rotate-right { 0%    { transform: rotate(0deg);   background: $c13-bfr;}
+                                   50%    { transform: rotate(180deg); background: $c13-bfr;}
+                                   50.01% { transform: rotate(360deg); background: $c13-aft;}
+                                   100%   { transform: rotate(360deg); background: $c13-aft;}
+}
+
+/*----------------------------
+  animation 2 red circle
+-----------------------------*/
+.anim_2 {
+  @include position-center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+  z-index: 10;
+
+  div {
+    width: 20vw;
+    height: 20vw;
+    background: #ae4c4c;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px #ae4c4c;
+    transform: scale(0);
+
+    &:nth-child(1)  { animation: show-ball 3s 3.2s linear forwards; }
+    &:nth-child(2)  { animation: show-ball 3s 3.7s linear forwards; }
+    &:nth-child(3)  { animation: show-ball 3s 3.8s linear forwards; }
+    &:nth-child(4)  { animation: show-ball 3s 3.4s linear forwards; }
+    &:nth-child(5)  { animation: show-ball 3s 3.6s linear forwards; }
+    &:nth-child(6)  { animation: show-ball 3s 3.2s linear forwards; }
+    &:nth-child(7)  { animation: show-ball 3s 4s linear forwards; }
+    &:nth-child(8)  { animation: show-ball 3s 4s linear forwards; }
+    &:nth-child(9)  { animation: show-ball 3s 3.6s linear forwards; }
+    &:nth-child(10) { animation: show-ball 3s 3.2s linear forwards; }
+    &:nth-child(11) { animation: show-ball 3s 3.4s linear forwards; }
+    &:nth-child(12) { animation: show-ball 3s 3.7s linear forwards; }
+    &:nth-child(13) { animation: show-ball 3s 3.8s linear forwards; }
+    &:nth-child(14) { animation: show-ball 3s 3.6s linear forwards; }
+    &:nth-child(15) { animation: show-ball 3s 4s linear forwards; }
+    &:nth-child(16) { animation: show-ball 3s 3.2s linear forwards; }
+    &:nth-child(17) { animation: show-ball 3s 3.6s linear forwards; }
+    &:nth-child(18) { animation: show-ball 3s 4s linear forwards; }
+    &:nth-child(19) { animation: show-ball 3s 3.4s linear forwards; }
+    &:nth-child(20) { animation: show-ball 3s 3.8s linear forwards; }
+    &:nth-child(21) { animation: show-ball 3s 3.6s linear forwards; }
+    &:nth-child(22) { animation: show-ball 3s 4s linear forwards; }
+    &:nth-child(23) { animation: show-ball 3s 3.2s linear forwards; }
+    &:nth-child(24) { animation: show-ball 3s 3.5s linear forwards; }
+    &:nth-child(25) { animation: show-ball 3s 3.4s linear forwards; }
+  }
+}
+
+@keyframes show-ball {
+  to   { transform: scale(2);}
+}
+
+
+/*----------------------------
+  animation 3 black circle
+-----------------------------*/
+.anim_3 {
+  @include position-center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+  z-index: 10;
+
+  div {
+    width: 20vw;
+    height: 20vw;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px #333;
+    transform: scale(0);
+
+    &:nth-child(1)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(2)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(3)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(4)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(5)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(6)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(7)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(8)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(9)  { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(10) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(11) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(12) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(13) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(14) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(15) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(16) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(17) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(18) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(19) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(20) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(21) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(22) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(23) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(24) { animation: show-ball 1.6s 5.3s forwards; }
+    &:nth-child(25) { animation: show-ball 1.6s 5.3s forwards; }
+  }
+}
+
+@keyframes show-ball {
+  to   { transform: scale(2);}
+}
+
+/*----------------------------
+  animation 4 white ball
+-----------------------------*/
+.anim_4 {
+  @include position-center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+
+  .center-ball {
+    position: absolute;
+    top: calc((100vh - 5vw) / 2);
+    left: calc((100vw - 5vw) / 2);
+    width: 5vw;
+    height: 5vw;
+    background: #fafafa;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 5px #fafafa;
+    animation: show-smallBall 1.8s 6.1s alternate 3;
+    transform: scale(0);
+  }
+
+  .left-ball {
+    position: absolute;
+    top: calc((100vh - 3vw) / 2);
+    left: calc((100vw - 3vw) / 2);
+    width: 3vw;
+    height: 3vw;
+    background: #fafafa;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 5px #fafafa;
+    animation: show-leftBall .7s 8.8s forwards;
+    opacity: 0;
+
+    &:before {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 3vw;
+      height: 3vw;
+      background: #fafafa;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 5px #fafafa;
+      content: '';
+      animation: show-subLeftBall 1s 10s forwards;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 3vw;
+      height: 3vw;
+      background: #fafafa;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 5px #fafafa;
+      content: '';
+      animation: show-subLeftBall 1s 10s forwards;
+    }
+  }
+
+  .right-ball {
+    position: absolute;
+    top: calc((100vh - 3vw) / 2);
+    left: calc((100vw - 3vw) / 2);
+    width: 3vw;
+    height: 3vw;
+    background: #fafafa;
+    border-radius: 50%;
+    box-shadow: 0 0 4px 5px #fafafa;
+    animation: show-rightBall .7s 10.2s forwards;
+    opacity: 0;
+
+    
+    &:before {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 3vw;
+      height: 3vw;
+      background: #fafafa;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 5px #fafafa;
+      content: '';
+      animation: show-subRightBall 1s 11s forwards;
+    }
+
+    &:after {
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      width: 3vw;
+      height: 3vw;
+      background: #fafafa;
+      border-radius: 50%;
+      box-shadow: 0 0 4px 5px #fafafa;
+      content: '';
+      animation: show-subRightBall 1s 11s forwards;
+    }
+  }
+}
+
+@keyframes show-smallBall {
+  50% { transform: scale(1);}
+  100% { transform: scale(0);}
+}
+
+@keyframes show-leftBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(-10vw);}
+}
+
+@keyframes show-rightBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(10vw);}
+}
+
+@keyframes show-subLeftBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(10vw);}
+}
+
+@keyframes show-subRightBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(-10vw);}
+}
+
+@keyframes rotate-balls {
+  0%   {transform: rotate(180deg);}
+  100% {transform: translate(360deg);}
+}
