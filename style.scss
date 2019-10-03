@@ -7,6 +7,7 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  font-family: ta-kai-regular, sans-serif;
   overflow: hidden;
 }
 @mixin position-center {
@@ -617,7 +618,25 @@ $c13-aft: #5b5266;
   to   { transform: scale(2);}
 }
 
-
+/*----------------------------
+  caution
+-----------------------------*/
+.help_1 {
+  @include position-center;
+  animation: show-txt 1s 5.3s;
+  z-index: 11;
+  opacity: 0;
+  div {
+    color: #fff;
+    &:nth-child(1) { font-size: 5rem;}
+    &:nth-child(2) { font-size: 4rem;}
+    &:nth-child(3) { font-size: 4.5rem;}
+    &:nth-child(4) { font-size: 3.5rem;}
+  } 
+}
+@keyframes show-txt {
+  to   { opacity: .2;}
+}
 /*----------------------------
   animation 3 black circle
 -----------------------------*/
@@ -628,7 +647,7 @@ $c13-aft: #5b5266;
   width: 100vw;
   height: 100vw;
   overflow: hidden;
-  z-index: 10;
+  z-index: 12;
 
   div {
     width: 20vw;
@@ -678,7 +697,7 @@ $c13-aft: #5b5266;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: 10;
+  z-index: 13;
 
   .center-ball {
     position: absolute;
@@ -702,7 +721,7 @@ $c13-aft: #5b5266;
     background: #fafafa;
     border-radius: 50%;
     box-shadow: 0 0 4px 5px #fafafa;
-    animation: show-leftBall .7s 8.8s forwards;
+    animation: show-leftBall .7s 8.8s forwards, shake-balls_left 2s 13s forwards;
     opacity: 0;
 
     &:before {
@@ -715,7 +734,7 @@ $c13-aft: #5b5266;
       border-radius: 50%;
       box-shadow: 0 0 4px 5px #fafafa;
       content: '';
-      animation: show-subLeftBall 1s 10s forwards;
+      animation: show-subLeftTopBall 1s 10s forwards;
     }
 
     &:after {
@@ -728,7 +747,7 @@ $c13-aft: #5b5266;
       border-radius: 50%;
       box-shadow: 0 0 4px 5px #fafafa;
       content: '';
-      animation: show-subLeftBall 1s 10s forwards;
+      animation: show-subLeftBottomBall 1s 10.5s forwards;
     }
   }
 
@@ -741,7 +760,7 @@ $c13-aft: #5b5266;
     background: #fafafa;
     border-radius: 50%;
     box-shadow: 0 0 4px 5px #fafafa;
-    animation: show-rightBall .7s 10.2s forwards;
+    animation: show-rightBall .7s 10.2s forwards,  shake-balls_right 2s 13s forwards;
     opacity: 0;
 
     
@@ -755,7 +774,7 @@ $c13-aft: #5b5266;
       border-radius: 50%;
       box-shadow: 0 0 4px 5px #fafafa;
       content: '';
-      animation: show-subRightBall 1s 11s forwards;
+      animation: show-subRightTopBall 1s 11s forwards;
     }
 
     &:after {
@@ -768,7 +787,7 @@ $c13-aft: #5b5266;
       border-radius: 50%;
       box-shadow: 0 0 4px 5px #fafafa;
       content: '';
-      animation: show-subRightBall 1s 11s forwards;
+      animation: show-subRightBottomBall 1s 11.5s forwards;
     }
   }
 }
@@ -780,25 +799,119 @@ $c13-aft: #5b5266;
 
 @keyframes show-leftBall {
   0%   { opacity: 1;}
-  100% { opacity: 1; transform: translate(-10vw);}
+  100% { opacity: 1; transform: translate(-16vw);}
 }
 
 @keyframes show-rightBall {
   0%   { opacity: 1;}
-  100% { opacity: 1; transform: translate(10vw);}
+  100% { opacity: 1; transform: translate(16vw);}
 }
 
-@keyframes show-subLeftBall {
+@keyframes show-subLeftTopBall {
   0%   { opacity: 1;}
-  100% { opacity: 1; transform: translate(10vw);}
+  100% { opacity: 1; transform: translate(9vw, -12vw);}
 }
 
-@keyframes show-subRightBall {
+@keyframes show-subLeftBottomBall {
   0%   { opacity: 1;}
-  100% { opacity: 1; transform: translate(-10vw);}
+  100% { opacity: 1; transform: translate(9vw, 12vw);}
 }
 
-@keyframes rotate-balls {
-  0%   {transform: rotate(180deg);}
-  100% {transform: translate(360deg);}
+@keyframes show-subRightTopBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(-9vw, -12vw);}
+}
+
+@keyframes show-subRightBottomBall {
+  0%   { opacity: 1;}
+  100% { opacity: 1; transform: translate(-9vw, 12vw);}
+}
+
+@keyframes shake-balls_left {
+  0%   { transform: translate(-16.1vw, 0) scaleX(.88);}
+  5%   { transform: translate(-15.9vw, 0) scaleX(.88);}
+  10%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  15%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  20%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  25%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  30%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  35%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  40%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  45%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  50%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  55%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  60%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  65%  { transform: translate(-15.9vw, 0) scaleX(.88);}
+  70%  { transform: translate(-16.1vw, 0) scaleX(.88);}
+  80%  { transform: translate(-16.1vw, 0) scaleX(1);}
+  100% { transform: translate(-16.1vw, 100vh) scaleX(.6);}
+}
+
+@keyframes shake-balls_right {
+  0%   { transform: translate(16.1vw, 0) scaleX(.88);}
+  5%   { transform: translate(15.9vw, 0) scaleX(.88);}
+  10%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  15%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  20%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  25%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  30%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  35%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  40%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  45%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  50%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  55%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  60%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  65%  { transform: translate(15.9vw, 0) scaleX(.88);}
+  70%  { transform: translate(16.1vw, 0) scaleX(.88);}
+  80%  { transform: translate(16.1vw, 0) scaleX(1);}
+  100% { transform: translate(16.1vw, 100vh) scaleX(.6);}
+}
+
+/*----------------------------
+  animation 5 caution
+-----------------------------*/
+.anim_5 {
+  @include position-center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 14;
+
+  .bg_1 {
+    width: 100%;
+    height: 100%;
+    background: #ae4c4c;
+    opacity: 0;
+    animation: show-bg .1s 9.5s, show-bg .1s 10.8s, show-bg .1s 11.5s, show-bg .1s 13s;
+  }
+
+  .help_2 {
+    opacity: 0;
+    animation: show-bg .2s 11.5s;
+
+    div {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.342);
+      &:nth-child(1) { top: 5vh; left: 10vw; font-size: 15vh;}
+      &:nth-child(2) { top: 23vh; left: 11vw; font-size: 16vh;}
+      &:nth-child(3) { top: 40vh; left: 10vw; font-size: 17vh;}
+      &:nth-child(4) { top: 59vh; left: 10vw; font-size: 16vh;}
+    }
+  }
+
+  .help_3 {
+    opacity: 0;
+    animation: show-bg .1s 13s;
+
+    div {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.432);
+      &:nth-child(1) { top: 20vh; right: 10vw; font-size: 20vh;}
+      &:nth-child(2) { top: 41vh; right: 11vw;  font-size: 22vh;}
+      &:nth-child(3) { top: 65vh; right: 10vw; font-size: 21vh;}
+    }
+  }
+}
+
+@keyframes show-bg {
+  100% { opacity: .7;}
 }
